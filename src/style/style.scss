@@ -1,6 +1,8 @@
+/* stylelint-disable custom-property-empty-line-before */
+/* stylelint-disable color-function-notation */
 /* stylelint-disable selector-class-pattern */
-@use "utils/a11y"; // Om det inte funkar, byt @use mot @import
-@use "vendor/reset";
+@use 'utils/a11y'; // Om det inte funkar, byt @use mot @import
+@use 'vendor/reset';
 
 :root {
   font-family: 'Baloo 2', cursive;
@@ -104,7 +106,7 @@ button {
 }
 
 .register-name-button {
-  background: rgba(255, 255, 255, 0.699);
+  background: rgba(255, 255, 255, 69.9%);
   padding: 3px 10px;
   border: none;
   font-size: 0.9rem;
@@ -117,7 +119,8 @@ button {
   background: rgb(255, 174, 0);
 }
 
-.start, .highscore-btn {
+.start,
+.highscore-btn {
   background: linear-gradient(rgb(246, 201, 77), rgb(219, 135, 9), rgb(235, 61, 8));
   padding: 10px 50px;
   border-radius: 50px;
@@ -193,7 +196,6 @@ button {
 //-------------------------------------- QUESTION PAGE --------------------------------------------
 //=================================================================================================
 
-
 .question-page {
   position: relative;
   background: var(--main-bg-color);
@@ -213,6 +215,8 @@ button {
 .category-img {
   margin-top: 20px;
   border-radius: 50%;
+  width: 340px;
+  height: 340px;
 }
 
 .question-container p {
@@ -287,12 +291,6 @@ button {
   border-radius: 50%;
 }
 
-.category-img {
-  width: 340px;
-  height: 340px;
-}
-
-
 //=================================================================================================
 //-------------------------------------- GAME OVER PAGE -------------------------------------------
 //=================================================================================================
@@ -310,7 +308,7 @@ button {
 .game-over {
   margin: 15px;
   text-transform: uppercase;
-  font-family: 'Slackey', cursive;
+  font-family: Slackey, cursive;
   font-size: 4.5rem;
   text-align: center;
 }
@@ -323,7 +321,7 @@ button {
 }
 
 .compare-answers-table {
-  background-color: rgba(255, 255, 255, 0.134);
+  background-color: rgba(255, 255, 255, 13.4%);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -342,17 +340,17 @@ button {
 }
 
 .show-user-answer-correct {
-  background-color: rgba(43, 194, 26, 0.478);
+  background-color: rgba(43, 194, 26, 47.8%);
   width: 50%;
 }
 
 .show-user-answer-wrong {
-  background-color: rgba(211, 61, 20, 0.619);
+  background-color: rgba(211, 61, 20, 61.9%);
   width: 50%;
 }
 
 .show-correct-answer {
-  background-color: rgba(43, 194, 26, 0.478);
+  background-color: rgba(43, 194, 26, 47.8%);
 }
 
 .play-again {
