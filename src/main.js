@@ -12,7 +12,6 @@ import computerQsHard from './computer-hard.js';
 import { check } from 'prettier';
 import { getJSDocParameterTags } from 'typescript';
 
-
 //=================================================================================================
 //----------------------------------- VARIABLE DECLARATIONS ---------------------------------------
 //=================================================================================================
@@ -27,7 +26,7 @@ const computerQuestionsMedium = computerQsMedium.results;
 const computerQuestionsHard = computerQsHard.results;
 
 const playerName = document.querySelector('#playerName');
-const playerRegMsg = document.createElement("p");
+const playerRegMsg = document.createElement('p');
 const startGameBtn = document.querySelector('#start-game-button');
 const startPage = document.querySelector('#start-page');
 
@@ -71,10 +70,10 @@ let bonusCountdown = null;
 // animation
 let animate = gsap.to('.countdown', {
   paused: true,
-  duration: .5,
+  duration: 0.5,
   scale: 2,
   top: '42%',
-  left: '50%'
+  left: '50%',
 });
 
 // keep track of current question
@@ -110,7 +109,7 @@ function savePlayerName() {
   const nameRegEx = /^[a-zA-ZåäöÅÄÖ-]+$/;
 
   if (!playerName.value.match(nameRegEx)) {
-    playerRegMsg.innerHTML = "Please insert a valid name.";
+    playerRegMsg.innerHTML = 'Please insert a valid name.';
     addPlayer.append(playerRegMsg);
   } else {
     currentName = playerName.value;
@@ -191,15 +190,15 @@ function categoryChoice(e) {
 
   if (choice.toLowerCase() == 'animals') {
     category = 'animals';
-    categoryImg.src = './animal-bg.png'
+    categoryImg.src = './img/animal-bg.png';
   } else if (choice.toLowerCase() == 'geography') {
     category = 'geography';
-    categoryImg.src = './geography-bg.png';
-    categoryImg.alt = "A colorful world map cartoon.";
+    categoryImg.src = './img/geography-bg.png';
+    categoryImg.alt = 'A colorful world map cartoon.';
   } else if (choice.toLowerCase() == 'computer') {
     category = 'computer';
-    categoryImg.src = './computer-bg.png';
-    categoryImg.alt = "A colorful computer cartoon.";
+    categoryImg.src = './img/computer-bg.png';
+    categoryImg.alt = 'A colorful computer cartoon.';
   }
   renderDifficultyPage();
 }
@@ -242,7 +241,6 @@ function chosenQuiz() {
       questionTimer = 15;
       scoreGain = 3;
     }
-
   } else if (category == 'geography') {
     if (difficulty == 'easy') {
       question = geographyQuestionsEasy[questionCounter].question;
@@ -263,7 +261,6 @@ function chosenQuiz() {
       questionTimer = 15;
       scoreGain = 3;
     }
-
   } else if (category == 'computer') {
     if (difficulty == 'easy') {
       question = computerQuestionsEasy[questionCounter].question;
@@ -289,7 +286,6 @@ function chosenQuiz() {
 
 // render questions
 function renderQuestions() {
-
   // set bonus score countdown
   timeBonus = 10;
 
@@ -316,7 +312,7 @@ function renderQuestions() {
   // render answer buttons
   answerBtns.forEach((btn, index) => {
     if (index != randomIndex) {
-      btn.innerHTML = `${incorrectAnswers[incorrectBtnIndex]}`
+      btn.innerHTML = `${incorrectAnswers[incorrectBtnIndex]}`;
       btn.classList.add('incorrectAnswer');
       incorrectBtnIndex++;
     } else {
@@ -375,7 +371,7 @@ function startCountdown(seconds) {
   updateCountdown();
 }
 
-// stop countdown timer 
+// stop countdown timer
 function stopCountdown() {
   clearInterval(countdownInterval);
 }
@@ -394,16 +390,16 @@ function stopAnimateCountdown() {
 
   animate = gsap.to('.countdown', {
     paused: true,
-    duration: .5,
+    duration: 0.5,
     scale: 2,
     top: '42%',
-    left: '50%'
+    left: '50%',
   });
 }
 
 function animateQuestions() {
   gsap.from('.question-container', { duration: 1.5, opacity: 0 });
-  gsap.from('.answer-btn', { duration: 1, opacity: 0, stagger: .3, delay: .5 });
+  gsap.from('.answer-btn', { duration: 1, opacity: 0, stagger: 0.3, delay: 0.5 });
 }
 
 // play again
@@ -427,10 +423,11 @@ function setHighscore() {
 
 // add to highscores
 function addHighscore() {
-  highscoreList.innerHTML = highscores.map(score => {
-    return `<li>${score.name}: ${score.score}`;
-  })
-    .join("");
+  highscoreList.innerHTML = highscores
+    .map(score => {
+      return `<li>${score.name}: ${score.score}`;
+    })
+    .join('');
 }
 
 // check if answer is correct, add 1 score if true
@@ -444,49 +441,49 @@ function checkAnswer(e) {
   let myAnswerArray = [];
   myAnswerArray.push(myAnswer);
 
-  myAnswerArray.forEach((answer) => {
-    const compareAnswersTable = document.querySelector(".compare-answers-table");
+  myAnswerArray.forEach(answer => {
+    const compareAnswersTable = document.querySelector('.compare-answers-table');
 
-    const showQuestionRow = document.createElement("tr");
+    const showQuestionRow = document.createElement('tr');
 
-    const showQuestion = document.createElement("th");
-    showQuestion.setAttribute("class", "show-question");
-    showQuestion.setAttribute("colspan", "2");
+    const showQuestion = document.createElement('th');
+    showQuestion.setAttribute('class', 'show-question');
+    showQuestion.setAttribute('colspan', '2');
     showQuestion.innerHTML = question;
     showQuestionRow.append(showQuestion);
     compareAnswersTable.append(showQuestionRow);
 
-    const compareAnswers = document.createElement("tr");
-    compareAnswers.setAttribute("class", "compare-answers");
+    const compareAnswers = document.createElement('tr');
+    compareAnswers.setAttribute('class', 'compare-answers');
 
-    const showUserAnswer = document.createElement("td");
-    showUserAnswer.setAttribute("class", "show-user-answer");
+    const showUserAnswer = document.createElement('td');
+    showUserAnswer.setAttribute('class', 'show-user-answer');
     showUserAnswer.innerHTML = answer;
     compareAnswers.append(showUserAnswer);
 
-    const showCorrectAnswer = document.createElement("td");
-    showCorrectAnswer.setAttribute("class", "show-correct-answer");
+    const showCorrectAnswer = document.createElement('td');
+    showCorrectAnswer.setAttribute('class', 'show-correct-answer');
     showCorrectAnswer.innerHTML = correctAnswer;
     compareAnswers.append(showCorrectAnswer);
     compareAnswersTable.append(compareAnswers);
-  })
+  });
 
   // add score or remove score (minimum 0 score)
   if (myAnswer == correctAnswer) {
-    timeBonus > 0 ? currentScore += (scoreGain + 1) : currentScore += scoreGain; // +1 score if question is answered within 10 seconds
-    const showUserAnswer = document.querySelector(".show-user-answer");
-    showUserAnswer.setAttribute("class", "show-user-answer-correct");
-    checkMyAnswerCorrect.classList.add("green-answer"); //add class to change color
+    timeBonus > 0 ? (currentScore += scoreGain + 1) : (currentScore += scoreGain); // +1 score if question is answered within 10 seconds
+    const showUserAnswer = document.querySelector('.show-user-answer');
+    showUserAnswer.setAttribute('class', 'show-user-answer-correct');
+    checkMyAnswerCorrect.classList.add('green-answer'); //add class to change color
     // change back color
     setTimeout(() => {
-      checkMyAnswerCorrect.classList.remove('green-answer')
+      checkMyAnswerCorrect.classList.remove('green-answer');
     }, 3000);
-  } else if ((myAnswer == incorrectAnswers[0] || myAnswer == incorrectAnswers[1] || myAnswer == incorrectAnswers[2])) {
-    currentScore >= scoreGain ? currentScore -= scoreGain : currentScore = 0;
+  } else if (myAnswer == incorrectAnswers[0] || myAnswer == incorrectAnswers[1] || myAnswer == incorrectAnswers[2]) {
+    currentScore >= scoreGain ? (currentScore -= scoreGain) : (currentScore = 0);
     const checkMyAnswerIncorrect = e.currentTarget;
-    checkMyAnswerIncorrect.classList.add("red-answer"); //add class to change color
-    const showUserAnswer = document.querySelector(".show-user-answer");
-    showUserAnswer.setAttribute("class", "show-user-answer-wrong");
+    checkMyAnswerIncorrect.classList.add('red-answer'); //add class to change color
+    const showUserAnswer = document.querySelector('.show-user-answer');
+    showUserAnswer.setAttribute('class', 'show-user-answer-wrong');
     // change back color
     setTimeout(() => {
       checkMyAnswerIncorrect.classList.remove('red-answer');
@@ -537,12 +534,11 @@ playAgainBtn.addEventListener('click', restartGame);
 // check answers
 answerBtns.forEach(btn => {
   btn.addEventListener('click', checkAnswer);
-
-})
+});
 
 highscoreBtns.forEach(btn => {
   btn.addEventListener('click', renderHighscores);
-})
+});
 
 // calls init function to run on page load
 init();
