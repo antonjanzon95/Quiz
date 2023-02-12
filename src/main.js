@@ -184,20 +184,24 @@ function renderHighscores() {
 
 //========================================== QUIZ CHOICES ===========================================//
 
+const animalImage = '../img/animal-bg.png';
+const geographyImage = '../img/geography-bg.png';
+const computerImage = '../img/computer-bg.png';
+
 // category choice
 function categoryChoice(e) {
   const choice = e.currentTarget.innerHTML;
 
   if (choice.toLowerCase() == 'animals') {
     category = 'animals';
-    categoryImg.src = '../img/animal-bg.png';
+    categoryImg.src = animalImage;
   } else if (choice.toLowerCase() == 'geography') {
     category = 'geography';
-    categoryImg.src = '../img/geography-bg.png';
+    categoryImg.src = geographyImage;
     categoryImg.alt = 'A colorful world map cartoon.';
   } else if (choice.toLowerCase() == 'computer') {
     category = 'computer';
-    categoryImg.src = '../img/computer-bg.png';
+    categoryImg.src = computerImage;
     categoryImg.alt = 'A colorful computer cartoon.';
   }
   renderDifficultyPage();
