@@ -184,9 +184,9 @@ function renderHighscores() {
 
 //========================================== QUIZ CHOICES ===========================================//
 
-const animalImage = '../img/animal-bg.png';
-const geographyImage = '../img/geography-bg.png';
-const computerImage = '../img/computer-bg.png';
+const animalImage = 'animal-bg.png';
+const geographyImage = 'geography-bg.png';
+const computerImage = 'img/computer-bg.png';
 
 // category choice
 function categoryChoice(e) {
