@@ -195,6 +195,7 @@ function categoryChoice(e) {
   if (choice.toLowerCase() == 'animals') {
     category = 'animals';
     categoryImg.src = animalImage;
+    categoryImg.alt = 'A colorful animal image';
   } else if (choice.toLowerCase() == 'geography') {
     category = 'geography';
     categoryImg.src = geographyImage;
