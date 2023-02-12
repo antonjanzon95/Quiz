@@ -190,14 +190,14 @@ function categoryChoice(e) {
 
   if (choice.toLowerCase() == 'animals') {
     category = 'animals';
-    categoryImg.src = './img/animal-bg.png';
+    categoryImg.src = '../img/animal-bg.png';
   } else if (choice.toLowerCase() == 'geography') {
     category = 'geography';
-    categoryImg.src = './img/geography-bg.png';
+    categoryImg.src = '../img/geography-bg.png';
     categoryImg.alt = 'A colorful world map cartoon.';
   } else if (choice.toLowerCase() == 'computer') {
     category = 'computer';
-    categoryImg.src = './img/computer-bg.png';
+    categoryImg.src = '../img/computer-bg.png';
     categoryImg.alt = 'A colorful computer cartoon.';
   }
   renderDifficultyPage();
